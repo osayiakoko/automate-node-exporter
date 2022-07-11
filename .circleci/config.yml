@@ -73,7 +73,7 @@ jobs:
             fi
 
   # Destory infrastructure: 
-  destory_infrastructure:
+  destroy_infrastructure:
     docker:
       - image: amazon/aws-cli
     steps:
@@ -85,8 +85,8 @@ workflows:
   my-workflow:
     jobs:
       # - create_infrastructure
-      - configure_infrastructure
-      - smoke_test:
-          requires: 
-            - configure_infrastructure
-      # - destory_infrastructure
+      # - configure_infrastructure
+      # - smoke_test:
+      #     requires: 
+      #       - configure_infrastructure
+      - destroy_infrastructure
